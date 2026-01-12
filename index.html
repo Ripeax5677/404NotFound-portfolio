@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>404NotFound | Developer</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #020617;
+    color: #e5e7eb;
+    overflow-x: hidden;
+}
+
+/* LANGUAGE SWITCH */
+.lang-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.lang-switch button {
+    background: transparent;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: 6px;
+}
+
+.lang-switch button.active {
+    background: #38bdf8;
+    color: #020617;
+}
+
+/* HERO */
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    background: linear-gradient(90deg, #38bdf8, #a78bfa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #c7d2fe;
+}
+
+/* CONTENT */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 90px 20px;
+}
+
+h2 {
+    color: #38bdf8;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+p {
+    line-height: 1.9;
+    color: #d1d5db;
+    font-size: 1.05rem;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 35px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="lang-switch">
+    <button id="en" class="active">EN</button>
+    <button id="de">DE</button>
+</div>
+
+<header>
+    <h1>404NotFound</h1>
+
+    <p class="subtitle" data-lang="en">
+        Web Developer & Discord Bot Developer
+    </p>
+    <p class="subtitle" data-lang="de" hidden>
+        Webentwickler & Discord-Bot-Entwickler
+    </p>
+</header>
+
+<section>
+    <h2 data-lang="en">About Me</h2>
+    <h2 data-lang="de" hidden>Über mich</h2>
+
+    <div class="card">
+        <p data-lang="en">
+            I am 404NotFound, a developer focused on modern web solutions and custom Discord bot development.
+            I enjoy building clean, efficient, and scalable systems that are easy to use and maintain.
+            My work is driven by curiosity, problem-solving, and the desire to constantly improve my skills.
+            <br><br>
+            I mainly work with HTML, CSS, JavaScript, Python, and C#. When developing Discord bots, I focus on
+            performance, stability, and custom functionality tailored to the needs of each project.
+            One of my notable projects is the Discord bot developed for Alex_auf_Tour, where I handled the
+            technical implementation and feature development.
+            <br><br>
+            I value structured code, clear communication, and practical solutions. My goal is to create
+            systems that not only work well but also feel intuitive and reliable.
+        </p>
+
+        <p data-lang="de" hidden>
+            Ich bin 404NotFound, Entwickler mit Fokus auf moderne Weblösungen und individuelle Discord-Bots.
+            Ich arbeite gerne an sauberen, effizienten und skalierbaren Systemen, die leicht zu bedienen
+            und wartbar sind. Meine Motivation kommt aus Neugier, Problemlösung und dem stetigen Wunsch,
+            mich technisch weiterzuentwickeln.
+            <br><br>
+            Hauptsächlich arbeite ich mit HTML, CSS, JavaScript, Python und C#. Bei der Entwicklung von
+            Discord-Bots lege ich besonderen Wert auf Performance, Stabilität und passgenaue Funktionen,
+            die exakt auf das jeweilige Projekt zugeschnitten sind. Ein Beispiel hierfür ist der
+            Discord-Bot für Alex_auf_Tour, bei dem ich die komplette technische Umsetzung übernommen habe.
+            <br><br>
+            Strukturierter Code, klare Kommunikation und praktikable Lösungen sind mir besonders wichtig.
+            Mein Ziel ist es, Systeme zu entwickeln, die nicht nur funktionieren, sondern sich auch
+            zuverlässig und durchdacht anfühlen.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 404NotFound
+</footer>
+
+<script>
+const buttons = document.querySelectorAll(".lang-switch button");
+const texts = document.querySelectorAll("[data-lang]");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const lang = btn.id;
+
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        texts.forEach(el => {
+            el.hidden = el.dataset.lang !== lang;
+        });
+
+        document.documentElement.lang = lang;
+    });
+});
+</script>
+
+</body>
+</html>
