@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio of 404NotFound - Web Developer & Discord Bot Developer. Modern, reliable and scalable digital solutions.">
-<meta name="keywords" content="Portfolio, Web Developer, Discord Bot Developer, JavaScript, HTML, CSS, Python, C#">
+<meta name="description" content="Portfolio of 404NotFound - Web Developer & Discord Bot Developer.">
 <meta name="author" content="404NotFound">
 <title>404NotFound | Developer Portfolio</title>
 
@@ -29,15 +28,31 @@ h2{color:#38bdf8;margin-bottom:30px;font-size:2.2rem}
 p{line-height:1.9;color:#d1d5db;font-size:1.05rem}
 
 /* CARDS */
-.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:40px;border-radius:20px;backdrop-filter:blur(14px);transition:.4s;margin-bottom:25px}
-.card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(56,189,248,.25)}
+.card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  padding:40px;
+  border-radius:20px;
+  backdrop-filter:blur(14px);
+  margin-bottom:25px;
+}
 
-/* PROJECT TITLE */
-.project-title{font-size:1.2rem;margin-bottom:10px;color:#e5e7eb}
-
-/* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(40px);transition:.8s}
-.reveal.active{opacity:1;transform:none}
+/* SLIDE-IN REVEAL */
+.reveal-left{
+  opacity:0;
+  transform:translateX(-60px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.reveal-right{
+  opacity:0;
+  transform:translateX(60px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.reveal-left.active,
+.reveal-right.active{
+  opacity:1;
+  transform:translateX(0);
+}
 
 /* FOOTER */
 footer{text-align:center;padding:40px;color:#94a3b8;font-size:.95rem}
@@ -52,20 +67,20 @@ section{padding:60px 15px}
 
 /* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
-*{animation:none!important;transition:none!important}
+.reveal-left,.reveal-right{
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+}
 }
 </style>
 </head>
 
 <body>
 
-<noscript>
-<p style="text-align:center;padding:20px">This site works best with JavaScript enabled.</p>
-</noscript>
-
 <canvas id="particles" aria-hidden="true"></canvas>
 
-<div class="lang-switch" role="navigation" aria-label="Language switch">
+<div class="lang-switch">
 <button id="en" class="active">EN</button>
 <button id="de">DE</button>
 </div>
@@ -76,71 +91,53 @@ section{padding:60px 15px}
 </header>
 
 <!-- ABOUT -->
-<section class="reveal">
+<section class="reveal-left">
 <h2 data-lang="en">About Me</h2>
 <h2 data-lang="de" hidden>Über mich</h2>
 <div class="card">
 <p data-lang="en">
-I am 404NotFound, a developer focused on building modern, reliable, and well-structured digital solutions.
-My work emphasizes clean architecture, performance, and long-term maintainability.
-<br><br>
-My main areas are web development and custom Discord bot development.
-I primarily work with HTML, CSS, JavaScript, Python, and C#.
+I am 404NotFound, a developer focused on modern, reliable and scalable digital solutions.
+My main areas are web development and Discord bot development.
 </p>
 <p data-lang="de" hidden>
-Ich bin 404NotFound, Entwickler mit Fokus auf moderne, zuverlässige und klar strukturierte Lösungen.
-Mein Schwerpunkt liegt auf sauberer Architektur, Performance und langfristiger Wartbarkeit.
-<br><br>
-Meine Hauptbereiche sind Webentwicklung sowie die Entwicklung individueller Discord-Bots
-mit HTML, CSS, JavaScript, Python und C#.
+Ich bin 404NotFound, Entwickler mit Fokus auf moderne, zuverlässige und skalierbare Lösungen.
+Meine Hauptbereiche sind Webentwicklung und Discord-Bot-Entwicklung.
 </p>
 </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="reveal">
+<section class="reveal-right">
 <h2 data-lang="en">Projects</h2>
 <h2 data-lang="de" hidden>Projekte</h2>
 
 <div class="card">
-<div class="project-title">Discord Bot – Alex_auf_Tour</div>
-<p data-lang="en">
-Custom Discord bot including automation, moderation tools and scalable architecture.
-</p>
-<p data-lang="de" hidden>
-Individueller Discord-Bot mit Automatisierung, Moderationsfunktionen und skalierbarer Architektur.
-</p>
+<p><strong>Discord Bot – Alex_auf_Tour</strong><br>
+Custom Discord bot with automation and moderation features.</p>
 </div>
 
 <div class="card">
-<div class="project-title">Developer Portfolio Website</div>
-<p data-lang="en">
-Personal portfolio built with pure HTML, CSS and JavaScript focusing on performance and accessibility.
-</p>
-<p data-lang="de" hidden>
-Persönliche Portfolio-Website mit Fokus auf Performance und Barrierefreiheit.
-</p>
+<p><strong>Developer Portfolio Website</strong><br>
+Built with HTML, CSS and JavaScript.</p>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section class="reveal">
+<section class="reveal-left">
 <h2 data-lang="en">Contact</h2>
 <h2 data-lang="de" hidden>Kontakt</h2>
 <div class="card">
-<p>
-💬 Discord: <strong>404notfound____._</strong><br>
-🌍 Languages: German / English
-</p>
+<p>💬 Discord: <strong>404notfound____._</strong><br>
+🌍 Languages: German / English</p>
 </div>
 </section>
 
 <!-- LEGAL -->
-<section class="reveal">
+<section class="reveal-right">
 <h2 data-lang="en">Legal & Privacy</h2>
 <h2 data-lang="de" hidden>Rechtliches & Datenschutz</h2>
 <div class="card">
-<p data-lang="en">This website is a personal portfolio. No user data is collected or stored.</p>
+<p data-lang="en">This website is a personal portfolio. No user data is collected.</p>
 <p data-lang="de" hidden>Diese Website ist ein persönliches Portfolio. Es werden keine Nutzerdaten gespeichert.</p>
 </div>
 </section>
@@ -150,6 +147,7 @@ Persönliche Portfolio-Website mit Fokus auf Performance und Barrierefreiheit.
 </footer>
 
 <script>
+/* LANGUAGE SWITCH */
 const buttons=document.querySelectorAll(".lang-switch button");
 const texts=document.querySelectorAll("[data-lang]");
 let lang=localStorage.getItem("lang")||"en";
@@ -164,6 +162,7 @@ restartTyping();
 buttons.forEach(b=>b.onclick=()=>setLang(b.id));
 setLang(lang);
 
+/* TYPING */
 const typingEl=document.getElementById("typing");
 const typingTexts={en:"Web Developer & Discord Bot Developer",de:"Webentwickler & Discord-Bot-Entwickler"};
 let i=0;
@@ -171,21 +170,34 @@ function type(){typingEl.textContent=typingTexts[lang].slice(0,i++);if(i<=typing
 function restartTyping(){i=0;typingEl.textContent="";type();}
 type();
 
-const reveals=document.querySelectorAll(".reveal");
-function reveal(){reveals.forEach(e=>{if(e.getBoundingClientRect().top<innerHeight-100)e.classList.add("active")})}
-addEventListener("scroll",reveal);reveal();
+/* INTERSECTION OBSERVER */
+const sections=document.querySelectorAll(".reveal-left,.reveal-right");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.15});
+sections.forEach(s=>observer.observe(s));
 
+/* PARTICLES */
 const canvas=document.getElementById("particles"),ctx=canvas.getContext("2d");
 canvas.width=innerWidth;canvas.height=innerHeight;
 addEventListener("resize",()=>{canvas.width=innerWidth;canvas.height=innerHeight});
-let run=true;document.addEventListener("visibilitychange",()=>run=!document.hidden);
 const particles=[];for(let i=0;i<80;i++)particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,s:Math.random()*2+1,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6});
 function anim(){
-if(!run)return requestAnimationFrame(anim);
 ctx.clearRect(0,0,canvas.width,canvas.height);
-particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;
-ctx.fillStyle="rgba(56,189,248,.6)";ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill();});
-requestAnimationFrame(anim);}
+particles.forEach(p=>{
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
+ctx.fillStyle="rgba(56,189,248,.6)";
+ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill();
+});
+requestAnimationFrame(anim);
+}
 anim();
 </script>
 
