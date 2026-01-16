@@ -3,178 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio von 404NotFound – Webentwickler & Discord Bot Entwickler">
-<meta name="author" content="404NotFound">
 <title>404NotFound | Portfolio</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif;}
 body{background:#020617;color:#e5e7eb;overflow-x:hidden;}
 #particles{position:fixed;inset:0;z-index:-1;}
-
-/* HERO */
-header{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:0 20px;
-}
-h1{
-  font-size:4rem;
-  background:linear-gradient(90deg,#38bdf8,#a78bfa);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-p#subtitle{
-  margin-top:15px;
-  font-size:1.3rem;
-  color:#c7d2fe;
-}
-
-/* SECTIONS */
-section{
-  max-width:1000px;
-  margin:auto;
-  padding:80px 20px;
-}
+.lang-switch{position:fixed;top:20px;right:20px;z-index:10;}
+.lang-switch button{background:transparent;border:1px solid #38bdf8;color:#38bdf8;padding:8px 14px;border-radius:8px;cursor:pointer;margin-left:6px;transition:.3s}
+.lang-switch button.active,.lang-switch button:hover{background:#38bdf8;color:#020617}
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+h1{font-size:4rem;background:linear-gradient(90deg,#38bdf8,#a78bfa);-webkit-background-clip:text;color:transparent;}
+#typing{margin-top:15px;font-size:1.3rem;color:#c7d2fe;}
+section{max-width:1000px;margin:auto;padding:80px 20px;}
 h2{color:#38bdf8;margin-bottom:25px;font-size:2.2rem;}
 p{line-height:1.9;color:#d1d5db;font-size:1.05rem;}
-
-/* CARD */
-.card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.15);
-  padding:35px;
-  border-radius:20px;
-  margin-bottom:25px;
-}
-
-/* FOOTER */
+.card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);padding:35px;border-radius:20px;margin-bottom:25px;}
 footer{text-align:center;padding:40px;color:#94a3b8;font-size:.95rem;}
-
-/* MOBILE */
-@media(max-width:600px){
-  h1{font-size:3rem}
-  h2{font-size:1.8rem}
-  #subtitle{font-size:1.1rem}
-  section{padding:60px 15px}
-}
+@media(max-width:600px){h1{font-size:3rem}h2{font-size:1.8rem}#typing{font-size:1.1rem}section{padding:60px 15px}}
 </style>
 </head>
-
 <body>
 
 <canvas id="particles"></canvas>
 
+<div class="lang-switch">
+  <button id="de" class="active">DE</button>
+  <button id="en">EN</button>
+</div>
+
 <header>
 <h1>404NotFound</h1>
-<p id="subtitle">Webentwickler & Discord-Bot Entwickler</p>
+<p id="typing">Webentwickler & Discord-Bot Entwickler</p>
 </header>
 
-<!-- ABOUT -->
 <section>
-<h2>Über mich</h2>
+<h2 data-lang="de">Über mich</h2>
+<h2 data-lang="en" hidden>About Me</h2>
 <div class="card">
-<p>
-Ich bin 404NotFound, ein leidenschaftlicher Entwickler mit Fokus auf Webentwicklung, Discord-Bots (Python) und JavaScript-APIs.  
-Ich entwickle Tools zur Automatisierung von Workflows, Integration von Diensten und zur Vereinfachung wiederkehrender Aufgaben.
+<p data-lang="de">
+Ich bin 404NotFound, Entwickler für Webentwicklung, Discord-Bots (Python) sowie JavaScript APIs und Automatisierungstools.
+Meine Arbeit legt Wert auf saubere Struktur, Performance und langfristige Wartbarkeit.
 </p>
-<p>
-Ich lege besonderen Wert auf sauberen Code, Performance, Wartbarkeit und intuitive Bedienbarkeit.  
-Neben der technischen Umsetzung ist mir Kommunikation mit Kunden und eine strukturierte Projektplanung sehr wichtig.
-</p>
-<p>
-Meine Haupttechnologien sind: HTML, CSS, JavaScript, Python und C#.  
-Ich entwickle sowohl Frontend- als auch Backend-Lösungen und kombiniere verschiedene Systeme, um effiziente Tools und Bots zu erstellen.
+<p data-lang="en" hidden>
+I am 404NotFound, developer for web, Discord bots (Python), JavaScript APIs and automation tools.
+I focus on clean structure, performance and maintainability.
 </p>
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section>
-<h2>Projekte</h2>
+<h2 data-lang="de">Projekte</h2>
+<h2 data-lang="en" hidden>Projects</h2>
 <div class="card">
-<p>
+<p data-lang="de">
 <strong>Discord Bot – Alex_auf_Tour</strong><br>
-Ein individuell entwickelter Discord-Bot für Community-Management und Automatisierung.  
-Wichtige Features:
-<ul>
-  <li>Twitch-Live-Benachrichtigungen</li>
-  <li>Automatisches Moderationssystem (Automod)</li>
-  <li>Admin-Logs für bessere Kontrolle</li>
-  <li>Geburtstagskalender mit Erinnerungen</li>
-</ul>
-Der Bot ist in Python programmiert, stabil, skalierbar und leicht erweiterbar.
+Funktionen: Twitch-Live-Benachrichtigungen, Automod, Admin-Logs, Geburtstagskalender und mehr. Programmiert in Python, stabil und skalierbar.
+</p>
+<p data-lang="en" hidden>
+<strong>Discord Bot – Alex_auf_Tour</strong><br>
+Features: Twitch live notifications, Automod, Admin logs, birthday calendar etc. Built in Python, stable and scalable.
 </p>
 </div>
 
 <div class="card">
-<p>
+<p data-lang="de">
 <strong>Developer Portfolio Website</strong><br>
-Eigene Portfolio-Webseite zur Präsentation von Projekten und Fähigkeiten.  
-Entwickelt mit HTML, CSS und JavaScript, mit Fokus auf Performance, Übersichtlichkeit und moderner Optik.
+Erstellt mit HTML, CSS und JavaScript. Fokus auf Performance, Übersichtlichkeit und Stabilität.
 </p>
-</div>
-
-<div class="card">
-<p>
-<strong>JavaScript-Automatisierungstools</strong><br>
-Entwicklung von APIs und Tools zur Automatisierung von wiederkehrenden Aufgaben, Integration von Services und Optimierung von Abläufen.  
-Besonders nützlich für Discord, Webseiten und kleine Software-Projekte.
+<p data-lang="en" hidden>
+<strong>Developer Portfolio Website</strong><br>
+Built with HTML, CSS and JavaScript. Focus on performance, clarity and stability.
 </p>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section>
-<h2>Kontakt</h2>
+<h2 data-lang="de">Kontakt</h2>
+<h2 data-lang="en" hidden>Contact</h2>
 <div class="card">
-<p>
-💬 Discord: <strong>404notfound____._</strong><br>
-🌍 Sprachen: Deutsch
-</p>
-<p>
-Ich bin offen für Projekte, Kooperationen und individuelle Anfragen.  
-Schreibe mir gerne, wenn du einen Discord-Bot, eine Website oder ein Automatisierungstool entwickeln lassen möchtest.
-</p>
+<p data-lang="de">💬 Discord: <strong>404notfound____._</strong><br>🌍 Sprachen: Deutsch / Englisch</p>
+<p data-lang="en" hidden>💬 Discord: <strong>404notfound____._</strong><br>🌍 Languages: German / English</p>
 </div>
 </section>
 
-<!-- LEGAL -->
 <section>
-<h2>Rechtliches & Datenschutz</h2>
+<h2 data-lang="de">Rechtliches & Datenschutz</h2>
+<h2 data-lang="en" hidden>Legal & Privacy</h2>
 <div class="card">
-<p>
-Diese Website dient ausschließlich als persönliches Portfolio und Showcase meiner Arbeit.  
-Es werden keine Nutzerdaten erfasst oder gespeichert. Externe Links verweisen auf die jeweiligen Eigentümer.
-</p>
+<p data-lang="de">Diese Website ist ein persönliches Portfolio. Es werden keine Nutzerdaten gespeichert.</p>
+<p data-lang="en" hidden>This website is a personal portfolio. No user data is collected or stored.</p>
 </div>
 </section>
 
-<footer>
-© 2026 404NotFound — Web & Discord Bot Entwickler
-</footer>
+<footer>© 2026 404NotFound — Web & Discord Bot Entwickler</footer>
 
 <script>
+/* LANGUAGE SWITCH */
+const buttons=document.querySelectorAll(".lang-switch button");
+const texts=document.querySelectorAll("[data-lang]");
+let lang="de"; // Standard DE
+
+function setLang(selected){
+  lang=selected;
+  buttons.forEach(b=>b.classList.toggle("active",b.id===lang));
+  texts.forEach(t=>t.hidden=t.dataset.lang!==lang);
+  // Typing Text aktualisieren
+  const typingTexts={de:"Webentwickler & Discord-Bot Entwickler",en:"Web Developer & Discord Bot Developer"};
+  document.getElementById("typing").textContent=typingTexts[lang];
+}
+
+buttons.forEach(btn=>btn.addEventListener("click",()=>setLang(btn.id)));
+setLang(lang);
+
 /* PARTICLES */
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth; canvas.height=innerHeight;
+const canvas=document.getElementById("particles"),ctx=canvas.getContext("2d");
+canvas.width=innerWidth;canvas.height=innerHeight;
 window.addEventListener("resize",()=>{canvas.width=innerWidth;canvas.height=innerHeight;});
-const particles=[...Array(70)].map(()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*0.6,vy:(Math.random()-.5)*0.6,s:Math.random()*2+1}));
-(function animate(){
+const particles=[...Array(70)].map(()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6,s:Math.random()*2+1}));
+(function anim(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   particles.forEach(p=>{
-    p.x+=p.vx; p.y+=p.vy;
+    p.x+=p.vx;p.y+=p.vy;
     if(p.x<0||p.x>canvas.width)p.vx*=-1;
     if(p.y<0||p.y>canvas.height)p.vy*=-1;
     ctx.fillStyle="rgba(56,189,248,.6)";
-    ctx.beginPath(); ctx.arc(p.x,p.y,p.s,0,Math.PI*2); ctx.fill();
+    ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill();
   });
-  requestAnimationFrame(animate);
+  requestAnimationFrame(anim);
 })();
 </script>
 
