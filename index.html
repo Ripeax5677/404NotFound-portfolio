@@ -3,14 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of 404NotFound - Web Developer & Discord Bot Developer">
+<meta name="author" content="404NotFound">
 <title>404NotFound | Developer Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif;}
-body{background:#020617;color:#e5e7eb;overflow-x:hidden}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',system-ui,sans-serif;
+}
 
-/* BACKGROUND */
-#particles{position:fixed;inset:0;z-index:-1}
+body{
+  background:#020617;
+  color:#e5e7eb;
+  overflow-x:hidden;
+}
+
+#particles{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
 
 /* HERO */
 header{
@@ -21,13 +36,19 @@ header{
   align-items:center;
   text-align:center;
 }
+
 h1{
   font-size:4rem;
   background:linear-gradient(90deg,#38bdf8,#a78bfa);
   -webkit-background-clip:text;
   color:transparent;
 }
-#typing{margin-top:15px;font-size:1.3rem;color:#c7d2fe}
+
+#typing{
+  margin-top:15px;
+  font-size:1.3rem;
+  color:#c7d2fe;
+}
 
 /* SECTIONS */
 section{
@@ -35,45 +56,43 @@ section{
   margin:auto;
   padding:100px 20px;
 }
-h2{color:#38bdf8;margin-bottom:30px;font-size:2.2rem}
-p{line-height:1.9;color:#d1d5db;font-size:1.05rem}
+
+h2{
+  color:#38bdf8;
+  margin-bottom:30px;
+  font-size:2.2rem;
+}
+
+p{
+  line-height:1.9;
+  color:#d1d5db;
+  font-size:1.05rem;
+}
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
   padding:40px;
   border-radius:20px;
-}
-
-/* SLIDE-IN */
-.reveal-left,
-.reveal-right{
-  opacity:0;
-  transform:translateX(0);
-  transition:opacity .8s ease, transform .8s ease;
-  will-change:transform,opacity;
-}
-
-.reveal-left{transform:translateX(-60px)}
-.reveal-right{transform:translateX(60px)}
-
-.reveal-left.active,
-.reveal-right.active{
-  opacity:1;
-  transform:translateX(0);
-}
-
-/* REDUCED MOTION */
-@media(prefers-reduced-motion:reduce){
-.reveal-left,.reveal-right{
-  opacity:1!important;
-  transform:none!important;
-}
+  margin-bottom:25px;
 }
 
 /* FOOTER */
-footer{text-align:center;padding:40px;color:#94a3b8}
+footer{
+  text-align:center;
+  padding:40px;
+  color:#94a3b8;
+  font-size:.95rem;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  h1{font-size:3rem}
+  h2{font-size:1.8rem}
+  #typing{font-size:1.1rem}
+  section{padding:70px 15px}
+}
 </style>
 </head>
 
@@ -82,91 +101,105 @@ footer{text-align:center;padding:40px;color:#94a3b8}
 <canvas id="particles"></canvas>
 
 <header>
-<h1>404NotFound</h1>
-<p id="typing">Web Developer & Discord Bot Developer</p>
+  <h1>404NotFound</h1>
+  <p id="typing"></p>
 </header>
 
-<section class="reveal-left">
-<h2>About Me</h2>
-<div class="card">
-<p>
-I am 404NotFound, a developer focused on modern, reliable and scalable solutions.
-My main areas are web development and Discord bot development.
-</p>
-</div>
+<section>
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am 404NotFound, a developer focused on modern, reliable and maintainable digital solutions.
+      My main areas are web development and custom Discord bot development.
+      <br><br>
+      I work primarily with HTML, CSS, JavaScript, Python and C# and focus on clean architecture,
+      performance and long-term stability.
+    </p>
+  </div>
 </section>
 
-<section class="reveal-right">
-<h2>Projects</h2>
-<div class="card">
-<p><strong>Discord Bot – Alex_auf_Tour</strong><br>
-Automation, moderation and custom features.</p>
-</div>
+<section>
+  <h2>Projects</h2>
+  <div class="card">
+    <p>
+      <strong>Discord Bot – Alex_auf_Tour</strong><br>
+      Custom Discord bot with automation, moderation tools and scalable feature logic.
+    </p>
+  </div>
+
+  <div class="card">
+    <p>
+      <strong>Developer Portfolio Website</strong><br>
+      Built with pure HTML, CSS and JavaScript without frameworks.
+    </p>
+  </div>
 </section>
 
-<section class="reveal-left">
-<h2>Contact</h2>
-<div class="card">
-<p>💬 Discord: <strong>404notfound____._</strong><br>
-Languages: German / English</p>
-</div>
+<section>
+  <h2>Contact</h2>
+  <div class="card">
+    <p>
+      💬 Discord: <strong>404notfound____._</strong><br>
+      🌍 Languages: German / English
+    </p>
+  </div>
 </section>
 
-<section class="reveal-right">
-<h2>Legal</h2>
-<div class="card">
-<p>No user data is collected.</p>
-</div>
+<section>
+  <h2>Legal & Privacy</h2>
+  <div class="card">
+    <p>
+      This website is a personal portfolio. No user data is collected or stored.
+    </p>
+  </div>
 </section>
 
 <footer>
-© 2026 404NotFound — Web & Discord Bot Developer
+  © 2026 404NotFound — Web & Discord Bot Developer
 </footer>
 
 <script>
-/* TYPING */
+/* TYPING EFFECT (SAFE) */
 const typing=document.getElementById("typing");
 const text="Web Developer & Discord Bot Developer";
 let i=0;
 (function type(){
-typing.textContent=text.slice(0,i++);
-if(i<=text.length)setTimeout(type,60);
+  typing.textContent=text.slice(0,i++);
+  if(i<=text.length) setTimeout(type,60);
 })();
 
-/* SLIDE-IN OBSERVER */
-const revealEls=document.querySelectorAll(".reveal-left,.reveal-right");
+/* PARTICLES (SAFE) */
+const c=document.getElementById("particles");
+const ctx=c.getContext("2d");
+c.width=innerWidth;
+c.height=innerHeight;
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("active");
-observer.unobserve(entry.target);
-}
+addEventListener("resize",()=>{
+  c.width=innerWidth;
+  c.height=innerHeight;
 });
-},{rootMargin:"0px 0px -100px 0px"});
 
-revealEls.forEach(el=>observer.observe(el));
+const particles=[...Array(70)].map(()=>({
+  x:Math.random()*c.width,
+  y:Math.random()*c.height,
+  vx:(Math.random()-.5)*.6,
+  vy:(Math.random()-.5)*.6,
+  s:Math.random()*2+1
+}));
 
-/* 🔒 FALLBACK: FORCE VISIBILITY */
-setTimeout(()=>{
-revealEls.forEach(el=>el.classList.add("active"));
-},1500);
-
-/* PARTICLES */
-const c=document.getElementById("particles"),x=c.getContext("2d");
-c.width=innerWidth;c.height=innerHeight;
-addEventListener("resize",()=>{c.width=innerWidth;c.height=innerHeight});
-const p=[...Array(70)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6,s:Math.random()*2+1}));
-(function anim(){
-x.clearRect(0,0,c.width,c.height);
-p.forEach(o=>{
-o.x+=o.vx;o.y+=o.vy;
-if(o.x<0||o.x>c.width)o.vx*=-1;
-if(o.y<0||o.y>c.height)o.vy*=-1;
-x.fillStyle="rgba(56,189,248,.6)";
-x.beginPath();x.arc(o.x,o.y,o.s,0,Math.PI*2);x.fill();
-});
-requestAnimationFrame(anim);
+(function animate(){
+  ctx.clearRect(0,0,c.width,c.height);
+  particles.forEach(p=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+    if(p.x<0||p.x>c.width)p.vx*=-1;
+    if(p.y<0||p.y>c.height)p.vy*=-1;
+    ctx.fillStyle="rgba(56,189,248,.6)";
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.s,0,Math.PI*2);
+    ctx.fill();
+  });
+  requestAnimationFrame(animate);
 })();
 </script>
 
