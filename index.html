@@ -3,66 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio of 404NotFound - Web Developer & Discord Bot Developer.">
-<meta name="author" content="404NotFound">
 <title>404NotFound | Developer Portfolio</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif;}
-body{background:#020617;color:#e5e7eb;overflow-x:hidden;scroll-behavior:smooth;}
+body{background:#020617;color:#e5e7eb;overflow-x:hidden}
+
+/* BACKGROUND */
 #particles{position:fixed;inset:0;z-index:-1}
 
-/* LANGUAGE SWITCH */
-.lang-switch{position:fixed;top:20px;right:20px;z-index:10}
-.lang-switch button{background:transparent;border:1px solid #38bdf8;color:#38bdf8;padding:8px 14px;border-radius:8px;cursor:pointer;margin-left:6px;transition:.3s}
-.lang-switch button.active,.lang-switch button:hover{background:#38bdf8;color:#020617}
-
 /* HERO */
-header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-h1{font-size:4rem;background:linear-gradient(90deg,#38bdf8,#a78bfa);-webkit-background-clip:text;color:transparent}
-#typing{margin-top:15px;font-size:1.3rem;color:#c7d2fe;min-height:1.6em}
+header{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+h1{
+  font-size:4rem;
+  background:linear-gradient(90deg,#38bdf8,#a78bfa);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+#typing{margin-top:15px;font-size:1.3rem;color:#c7d2fe}
 
 /* SECTIONS */
-section{max-width:1000px;margin:auto;padding:90px 20px}
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:100px 20px;
+}
 h2{color:#38bdf8;margin-bottom:30px;font-size:2.2rem}
 p{line-height:1.9;color:#d1d5db;font-size:1.05rem}
 
-/* CARDS */
+/* CARD */
 .card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);
   padding:40px;
   border-radius:20px;
-  backdrop-filter:blur(14px);
-  margin-bottom:25px;
 }
 
-/* SLIDE-IN REVEAL */
-.reveal-left{
-  opacity:0;
-  transform:translateX(-60px);
-  transition:opacity .8s ease, transform .8s ease;
-}
+/* SLIDE-IN */
+.reveal-left,
 .reveal-right{
   opacity:0;
-  transform:translateX(60px);
+  transform:translateX(0);
   transition:opacity .8s ease, transform .8s ease;
+  will-change:transform,opacity;
 }
+
+.reveal-left{transform:translateX(-60px)}
+.reveal-right{transform:translateX(60px)}
+
 .reveal-left.active,
 .reveal-right.active{
   opacity:1;
   transform:translateX(0);
-}
-
-/* FOOTER */
-footer{text-align:center;padding:40px;color:#94a3b8;font-size:.95rem}
-
-/* MOBILE */
-@media(max-width:600px){
-h1{font-size:3rem}
-h2{font-size:1.8rem}
-#typing{font-size:1.1rem}
-section{padding:60px 15px}
 }
 
 /* REDUCED MOTION */
@@ -70,75 +69,53 @@ section{padding:60px 15px}
 .reveal-left,.reveal-right{
   opacity:1!important;
   transform:none!important;
-  transition:none!important;
 }
 }
+
+/* FOOTER */
+footer{text-align:center;padding:40px;color:#94a3b8}
 </style>
 </head>
 
 <body>
 
-<canvas id="particles" aria-hidden="true"></canvas>
-
-<div class="lang-switch">
-<button id="en" class="active">EN</button>
-<button id="de">DE</button>
-</div>
+<canvas id="particles"></canvas>
 
 <header>
 <h1>404NotFound</h1>
-<p id="typing"></p>
+<p id="typing">Web Developer & Discord Bot Developer</p>
 </header>
 
-<!-- ABOUT -->
 <section class="reveal-left">
-<h2 data-lang="en">About Me</h2>
-<h2 data-lang="de" hidden>Über mich</h2>
+<h2>About Me</h2>
 <div class="card">
-<p data-lang="en">
-I am 404NotFound, a developer focused on modern, reliable and scalable digital solutions.
+<p>
+I am 404NotFound, a developer focused on modern, reliable and scalable solutions.
 My main areas are web development and Discord bot development.
 </p>
-<p data-lang="de" hidden>
-Ich bin 404NotFound, Entwickler mit Fokus auf moderne, zuverlässige und skalierbare Lösungen.
-Meine Hauptbereiche sind Webentwicklung und Discord-Bot-Entwicklung.
-</p>
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="reveal-right">
-<h2 data-lang="en">Projects</h2>
-<h2 data-lang="de" hidden>Projekte</h2>
-
+<h2>Projects</h2>
 <div class="card">
 <p><strong>Discord Bot – Alex_auf_Tour</strong><br>
-Custom Discord bot with automation and moderation features.</p>
-</div>
-
-<div class="card">
-<p><strong>Developer Portfolio Website</strong><br>
-Built with HTML, CSS and JavaScript.</p>
+Automation, moderation and custom features.</p>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section class="reveal-left">
-<h2 data-lang="en">Contact</h2>
-<h2 data-lang="de" hidden>Kontakt</h2>
+<h2>Contact</h2>
 <div class="card">
 <p>💬 Discord: <strong>404notfound____._</strong><br>
-🌍 Languages: German / English</p>
+Languages: German / English</p>
 </div>
 </section>
 
-<!-- LEGAL -->
 <section class="reveal-right">
-<h2 data-lang="en">Legal & Privacy</h2>
-<h2 data-lang="de" hidden>Rechtliches & Datenschutz</h2>
+<h2>Legal</h2>
 <div class="card">
-<p data-lang="en">This website is a personal portfolio. No user data is collected.</p>
-<p data-lang="de" hidden>Diese Website ist ein persönliches Portfolio. Es werden keine Nutzerdaten gespeichert.</p>
+<p>No user data is collected.</p>
 </div>
 </section>
 
@@ -147,31 +124,18 @@ Built with HTML, CSS and JavaScript.</p>
 </footer>
 
 <script>
-/* LANGUAGE SWITCH */
-const buttons=document.querySelectorAll(".lang-switch button");
-const texts=document.querySelectorAll("[data-lang]");
-let lang=localStorage.getItem("lang")||"en";
-
-function setLang(l){
-lang=l;localStorage.setItem("lang",lang);
-document.documentElement.lang=lang;
-buttons.forEach(b=>b.classList.toggle("active",b.id===lang));
-texts.forEach(t=>t.hidden=t.dataset.lang!==lang);
-restartTyping();
-}
-buttons.forEach(b=>b.onclick=()=>setLang(b.id));
-setLang(lang);
-
 /* TYPING */
-const typingEl=document.getElementById("typing");
-const typingTexts={en:"Web Developer & Discord Bot Developer",de:"Webentwickler & Discord-Bot-Entwickler"};
+const typing=document.getElementById("typing");
+const text="Web Developer & Discord Bot Developer";
 let i=0;
-function type(){typingEl.textContent=typingTexts[lang].slice(0,i++);if(i<=typingTexts[lang].length)setTimeout(type,60);}
-function restartTyping(){i=0;typingEl.textContent="";type();}
-type();
+(function type(){
+typing.textContent=text.slice(0,i++);
+if(i<=text.length)setTimeout(type,60);
+})();
 
-/* INTERSECTION OBSERVER */
-const sections=document.querySelectorAll(".reveal-left,.reveal-right");
+/* SLIDE-IN OBSERVER */
+const revealEls=document.querySelectorAll(".reveal-left,.reveal-right");
+
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -179,26 +143,31 @@ entry.target.classList.add("active");
 observer.unobserve(entry.target);
 }
 });
-},{threshold:.15});
-sections.forEach(s=>observer.observe(s));
+},{rootMargin:"0px 0px -100px 0px"});
+
+revealEls.forEach(el=>observer.observe(el));
+
+/* 🔒 FALLBACK: FORCE VISIBILITY */
+setTimeout(()=>{
+revealEls.forEach(el=>el.classList.add("active"));
+},1500);
 
 /* PARTICLES */
-const canvas=document.getElementById("particles"),ctx=canvas.getContext("2d");
-canvas.width=innerWidth;canvas.height=innerHeight;
-addEventListener("resize",()=>{canvas.width=innerWidth;canvas.height=innerHeight});
-const particles=[];for(let i=0;i<80;i++)particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,s:Math.random()*2+1,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6});
-function anim(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-particles.forEach(p=>{
-p.x+=p.vx;p.y+=p.vy;
-if(p.x<0||p.x>canvas.width)p.vx*=-1;
-if(p.y<0||p.y>canvas.height)p.vy*=-1;
-ctx.fillStyle="rgba(56,189,248,.6)";
-ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill();
+const c=document.getElementById("particles"),x=c.getContext("2d");
+c.width=innerWidth;c.height=innerHeight;
+addEventListener("resize",()=>{c.width=innerWidth;c.height=innerHeight});
+const p=[...Array(70)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6,s:Math.random()*2+1}));
+(function anim(){
+x.clearRect(0,0,c.width,c.height);
+p.forEach(o=>{
+o.x+=o.vx;o.y+=o.vy;
+if(o.x<0||o.x>c.width)o.vx*=-1;
+if(o.y<0||o.y>c.height)o.vy*=-1;
+x.fillStyle="rgba(56,189,248,.6)";
+x.beginPath();x.arc(o.x,o.y,o.s,0,Math.PI*2);x.fill();
 });
 requestAnimationFrame(anim);
-}
-anim();
+})();
 </script>
 
 </body>
